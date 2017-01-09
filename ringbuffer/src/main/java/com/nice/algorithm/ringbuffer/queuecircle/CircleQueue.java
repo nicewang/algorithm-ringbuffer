@@ -23,18 +23,10 @@ public class CircleQueue<T> {
 	//队尾
 	private int tail = 0;
 	
-	public static CircleQueue<Integer> circleQueue = new CircleQueue<Integer>();
-	
-	public static CircleQueue<Integer> getInstance() {
-		
-		return circleQueue;
-		
-	}
-	
 	/**
 	 * 以循环队列默认大小创建空循环队列
 	 */
-	private CircleQueue() {
+	public CircleQueue() {
 		
 		capacity = DEFAULT_SIZE;
 		elementData = new Object[capacity];
@@ -95,7 +87,7 @@ public class CircleQueue<T> {
 			
 		} else {
 			
-			elementData[tail++] = element;
+			elementData[++tail] = element;
 			
 		}
 		
